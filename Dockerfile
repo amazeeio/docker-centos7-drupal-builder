@@ -43,4 +43,8 @@ RUN curl https://dl.yarnpkg.com/rpm/yarn.repo --silent -o /etc/yum.repos.d/yarn.
                 && \
     yum clean all -y
 
-CMD ["echo", "call me with a command"]
+COPY docker-sleep.sh /usr/local/bin/docker-sleep
+
+WORKDIR /app
+
+CMD ["/usr/local/bin/docker-sleep"]
