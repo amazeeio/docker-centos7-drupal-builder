@@ -1,4 +1,4 @@
-FROM amazeeio/centos7-php:7.0
+FROM amazeeio/centos7-php-drupal:8
 
 ### Installing Composer and Drush
 ENV COMPOSER_HOME=/composer \ 
@@ -42,7 +42,5 @@ RUN curl https://dl.yarnpkg.com/rpm/yarn.repo --silent -o /etc/yum.repos.d/yarn.
                 openssl openssl-devel \             
                 && \
     yum clean all -y
-
-ENTRYPOINT []
 
 CMD ["echo", "call me with a command"]
